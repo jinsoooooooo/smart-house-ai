@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/jinsoooooooo/smart-house-ai-frontend
+  repository: ghcr.io/jinsoooooooo/smart-house-ai/frontend
   tag: "latest"
   pullPolicy: Always
 

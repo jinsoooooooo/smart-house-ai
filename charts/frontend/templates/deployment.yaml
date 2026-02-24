@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: smart-house-ai-frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: smart-house-ai-frontend
   template:
     metadata:
       labels:
-        app: frontend
+        app: smart-house-ai-frontend
     spec:
       containers:
-        - name: frontend
+        - name: smart-house-ai-frontend
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:

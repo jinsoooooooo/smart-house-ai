@@ -63,7 +63,7 @@ function NewsCuration() {
             {/* ========================================================= */}
             {/* 뉴스 피드 스크롤 영역 */}
             {/* ========================================================= */}
-            <div className="flex-1 overflow-y-auto p-6 scroll-smooth">
+            <div className="flex-1 overflow-y-auto p-4 md:p-6 pb-24 md:pb-6 scroll-smooth">
                 <div className="max-w-4xl mx-auto flex flex-col gap-6 pb-12">
 
                     {/* 하이라이트/주요 뉴스 카드 (Hero) */}

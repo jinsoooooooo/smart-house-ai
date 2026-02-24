@@ -3,7 +3,7 @@ import React from 'react';
 function HistoryHub() {
     return (
         <div className="flex-1 flex flex-col h-full overflow-y-auto bg-slate-50 dark:bg-slate-900">
-            <main className="max-w-7xl mx-auto w-full px-6 py-8">
+            <main className="max-w-7xl mx-auto w-full px-4 md:px-6 py-6 md:py-8">
 
                 {/* ========================================================= */}
                 {/* 페이지 타이틀 영역 */}
@@ -223,7 +223,7 @@ function HistoryHub() {
             </main>
 
             {/* Footer */}
-            <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-6 px-6 mt-auto">
+            <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-6 px-4 md:px-6 mt-auto pb-24 md:pb-6">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-sm">© {new Date().getFullYear()} SmartHouse AI. 모든 법률 분석은 AI 보조 도구 역할을 하며, 최종 결정 전 전문가의 조언을 구하세요.</p>
                     <div className="flex gap-6 text-sm font-medium text-slate-500">

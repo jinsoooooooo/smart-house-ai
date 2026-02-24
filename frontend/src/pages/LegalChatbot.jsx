@@ -96,7 +96,7 @@ function LegalChatbot() {
             {/* ========================================================= */}
             {/* 사용자 입력 하단 바 */}
             {/* ========================================================= */}
-            <div className="p-6 bg-slate-50 dark:bg-slate-900/95 backdrop-blur-sm relative z-20 border-t border-slate-200 dark:border-slate-800">
+            <div className="p-4 md:p-6 pb-24 md:pb-6 bg-slate-50 dark:bg-slate-900/95 backdrop-blur-sm relative z-20 border-t border-slate-200 dark:border-slate-800">
                 <div className="max-w-4xl mx-auto flex flex-col gap-4">
 
                     {/* 빠른 질문 (Quick Reply) 칩 목록 (가로 스크롤) */}

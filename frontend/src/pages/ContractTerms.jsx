@@ -2,11 +2,11 @@ import React from 'react';
 
 function ContractTerms() {
     return (
-        <div className="flex-1 flex overflow-hidden h-full">
+        <div className="flex-1 flex flex-col md:flex-row overflow-hidden h-full">
             {/* ========================================================= */}
             {/* 좌측 패널: 특약 조건 입력 및 선택 영역 */}
             {/* ========================================================= */}
-            <div className="w-1/2 max-w-[600px] flex flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-y-auto z-10">
+            <div className="w-full md:w-1/2 md:max-w-[600px] flex flex-col border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-y-auto z-10 h-1/2 md:h-full shrink-0 md:shrink">
                 <div className="p-6 space-y-8">
 
                     {/* 헤더 타이틀 */}
@@ -130,7 +130,7 @@ function ContractTerms() {
             {/* ========================================================= */}
             {/* 우측 패널: 특약 문서 미리보기 (Preview) 영역 */}
             {/* ========================================================= */}
-            <div className="flex-1 bg-slate-100 dark:bg-slate-950 p-8 flex flex-col items-center justify-center overflow-hidden h-full">
+            <div className="flex-1 bg-slate-100 dark:bg-slate-950 p-4 md:p-8 pb-24 md:pb-8 flex flex-col items-center justify-start md:justify-center overflow-auto md:overflow-hidden h-1/2 md:h-full">
                 <div className="w-full max-w-3xl h-full flex flex-col pt-10">
 
                     {/* 종이 문서 형태의 컨테이너 */}

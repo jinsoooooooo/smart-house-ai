@@ -2,7 +2,7 @@ import React from 'react';
 
 function RiskDiagnosis() {
     return (
-        <div className="flex-1 flex flex-col h-full overflow-y-auto bg-slate-50 dark:bg-slate-900 p-6 lg:p-10">
+        <div className="flex-1 flex flex-col h-full overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 md:p-6 lg:p-10 pb-24 lg:pb-10">
             <div className="max-w-6xl mx-auto w-full flex flex-col gap-8">
 
                 {/* ========================================================= */}

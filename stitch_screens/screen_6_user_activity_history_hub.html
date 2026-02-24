@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#e2c135", "background-light": "#f8f8f6", "background-dark": "#211e11"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<title>User Activity &amp; History Hub - LegalProp AI</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex flex-col grow">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-background-dark px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined block">gavel</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">LegalProp AI</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">History</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Templates</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<label class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-64 bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/50" placeholder="Search property or document..." type="text"/>
+</label>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                        New Analysis
+                    </button>
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 bg-cover bg-center overflow-hidden" data-alt="Professional user profile picture avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJwHNcNqxw6h5uDDMZj2ZP57VvnnV8Wumqq51p9bhTs6EWsAj7LzcJKAQpkk_Xh8Z7DoZLgHCInypMb_D8zzmfkIbR6I5W7OapsSga_07CoSfXWZ0KKbQ-tHgTYIHxbjUn2LS7C8KNeqGb5vuGsaNKIDiMA90752csJzNKcpE8sS9WJ4LD8JVAKwJw6mOaG7-qGL7mWemiPI7f36K6V5ejAxPxic4nLrPZoF3qSE5CI1ILtbiqbEzuYJj4V2BXQ2gP_0KSNYJnLWjq')">
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 py-8">
+<!-- Page Title Section -->
+<div class="mb-8">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white mb-2">User Activity &amp; History Hub</h1>
+<p class="text-slate-500 dark:text-slate-400">Track your property investments and review AI-driven legal insights.</p>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Section: Main Content -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Tabs -->
+<div class="border-b border-slate-200 dark:border-slate-800 flex gap-8">
+<button class="pb-4 text-sm font-bold text-primary border-b-2 border-primary">My Property Portfolio</button>
+<button class="pb-4 text-sm font-medium text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition-colors">Analysis History</button>
+</div>
+<!-- Statistics Summary -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Total Assets</p>
+<p class="text-2xl font-bold">24 Properties</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Needs Review</p>
+<p class="text-2xl font-bold text-amber-500">3 Documents</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Reports Generated</p>
+<p class="text-2xl font-bold text-primary">152 Total</p>
+</div>
+</div>
+<!-- Documents List -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Recently Uploaded Documents</h2>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-3">
+<!-- Document Item 1 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white">Riverside Manor - Block A Registration</h3>
+<p class="text-xs text-slate-500">Analyzed Oct 24, 2023 • PDF Document</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 rounded-full text-xs font-bold">Safe</span>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">more_vert</button>
+</div>
+</div>
+<!-- Document Item 2 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white">Hillside Apartment Lease Agreement</h3>
+<p class="text-xs text-slate-500">Analyzed Oct 22, 2023 • DOCX Document</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 rounded-full text-xs font-bold">Caution</span>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">more_vert</button>
+</div>
+</div>
+<!-- Document Item 3 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white">Commercial Unit 4 - Title Deed</h3>
+<p class="text-xs text-slate-500">Analyzed Oct 20, 2023 • PDF Document</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400 rounded-full text-xs font-bold">Danger</span>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">more_vert</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Analysis Trends -->
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Portfolio Risk Overview</h2>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+<div class="h-48 w-full bg-slate-50 dark:bg-slate-800/50 rounded flex items-end justify-between p-4 gap-2">
+<div class="w-full bg-primary/20 h-[30%] rounded-t"></div>
+<div class="w-full bg-primary/40 h-[45%] rounded-t"></div>
+<div class="w-full bg-primary h-[80%] rounded-t"></div>
+<div class="w-full bg-primary/60 h-[55%] rounded-t"></div>
+<div class="w-full bg-primary/30 h-[40%] rounded-t"></div>
+<div class="w-full bg-primary h-[90%] rounded-t"></div>
+<div class="w-full bg-primary/50 h-[65%] rounded-t"></div>
+</div>
+<div class="flex justify-between mt-2 text-xs text-slate-500 font-medium">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Section: Sidebar -->
+<aside class="lg:col-span-4 space-y-6">
+<!-- Saved Special Terms -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bookmark</span>
+                                    Saved Special Terms
+                                </h3>
+<button class="material-symbols-outlined text-slate-400 text-lg">edit</button>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Force Majeure Clause</p>
+<p class="text-xs text-slate-500 mt-1 line-clamp-2">Standard clause for unforeseen circumstances preventing fulfillment of contract duties...</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded">Standard</span>
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">Commercial</span>
+</div>
+</div>
+<div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Early Termination Rights</p>
+<p class="text-xs text-slate-500 mt-1 line-clamp-2">Conditions under which the tenant can terminate the lease before the agreed date...</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded">Residential</span>
+<span class="px-2 py-0.5 bg-amber-500/10 text-amber-500 text-[10px] font-bold rounded">Review Required</span>
+</div>
+</div>
+<div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Subletting Consent</p>
+<p class="text-xs text-slate-500 mt-1 line-clamp-2">Formal approval process for primary tenants to rent to third parties...</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded">Custom</span>
+</div>
+</div>
+</div>
+<button class="w-full p-4 text-center text-sm font-bold text-primary hover:bg-primary/5 transition-colors border-t border-slate-200 dark:border-slate-800">
+                                View Library
+                            </button>
+</div>
+<!-- AI Legal Tips Card -->
+<div class="bg-primary/10 dark:bg-primary/20 rounded-xl p-5 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-bold text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">lightbulb</span>
+                                    AI Insight
+                                </h3>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                    "Registration documents for <strong>Riverside Manor</strong> contain a hidden easement clause. We recommend checking Section 4.2 for maintenance liability."
+                                </p>
+<button class="mt-4 text-sm font-bold text-primary flex items-center gap-1 group">
+                                    Analyze now 
+                                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-7xl text-primary">analytics</span>
+</div>
+</div>
+<!-- Recent Activity Log -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+<h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm">Action History</h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0"></div>
+<div>
+<p class="text-xs text-slate-800 dark:text-slate-200 font-medium">You uploaded a new title deed</p>
+<p class="text-[10px] text-slate-500">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 mt-1.5 shrink-0"></div>
+<div>
+<p class="text-xs text-slate-800 dark:text-slate-200 font-medium">System updated risk scores for Portfolio A</p>
+<p class="text-[10px] text-slate-500">Yesterday at 11:30 PM</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 mt-1.5 shrink-0"></div>
+<div>
+<p class="text-xs text-slate-800 dark:text-slate-200 font-medium">Lease report shared with Legal Dept</p>
+<p class="text-[10px] text-slate-500">Oct 22, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Bar for Utility -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-6 mt-12 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-sm">© 2023 LegalProp AI. All legal analysis is AI-assisted and subject to professional review.</p>
+<div class="flex gap-6 text-sm font-medium text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

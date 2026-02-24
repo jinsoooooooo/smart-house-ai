@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legal AI - Contract Terms Auto-complete</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#e2c135", "background-light": "#f8f8f6", "background-dark": "#211e11", "text-main": "#111318", "text-secondary": "#616e89", "border-color": "#dbdee6"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2463eb;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2463eb;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased overflow-hidden h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 bg-white dark:bg-[#1a202c] border-r border-border-color flex flex-col h-full shrink-0 z-20">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 rounded-full w-10 h-10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text-main dark:text-white text-base font-bold leading-normal">Legal AI</h1>
+<p class="text-text-secondary text-xs font-normal leading-normal">Pro Plan</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-background-light dark:hover:bg-gray-800 group transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white">dashboard</span>
+<span class="text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-background-light dark:hover:bg-gray-800 group transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white">apartment</span>
+<span class="text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white text-sm font-medium">Property Analysis</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined filled">description</span>
+<span class="text-primary text-sm font-bold">Contract Tools</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-background-light dark:hover:bg-gray-800 group transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white">newspaper</span>
+<span class="text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white text-sm font-medium">News</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-background-light dark:hover:bg-gray-800 group transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white">settings</span>
+<span class="text-text-secondary group-hover:text-text-main dark:text-gray-400 dark:group-hover:text-white text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border-color">
+<button class="flex w-full items-center justify-center gap-2 rounded-full h-10 px-4 bg-primary hover:bg-blue-700 transition-colors text-white text-sm font-bold shadow-lg shadow-blue-500/30">
+<span class="material-symbols-outlined text-lg">bolt</span>
+<span>Upgrade Plan</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Header -->
+<header class="h-16 border-b border-border-color bg-white dark:bg-[#1a202c] px-6 flex items-center justify-between shrink-0">
+<div>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Terms Auto-complete</h2>
+<p class="text-xs text-text-secondary hidden sm:block">Generate special terms for real estate contracts instantly.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-text-secondary bg-background-light dark:bg-gray-800 px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-xs font-medium">AI Active</span>
+</div>
+<button class="p-2 text-text-secondary hover:text-text-main hover:bg-background-light rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden border border-border-color">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Portrait of a professional man in a suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPKUKjlJtP2j3qBFtF9WMGTV7Oysb04VO2wMu_msAxasFTK-ajQcy9mZaAHSS6QECgIJszUd_-h363e3HtMIvaxBzvtH5ux3UuXUQ76M4rsoFG55UQ_QAmftreIFF2-0iS4J5BIQoB5USPyxRx27hQiZYO0-Fg7CNzlINot7Ep3urOEbuy4zyjO7wssD7iXDzrPKLWbqsw0a-oapuLS3MzsnEWRrTfT44Pj66jl1KpYXPyIb21NyuJdD7VIWNf0UblYUGKTz-1SbMi"/>
+</div>
+</div>
+</header>
+<!-- Split Screen Content -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Column: Controls -->
+<div class="w-1/2 max-w-[600px] flex flex-col border-r border-border-color bg-white dark:bg-[#1a202c] overflow-y-auto">
+<div class="p-6 space-y-8">
+<!-- Lease Type Selector -->
+<div class="bg-background-light dark:bg-gray-800 p-1.5 rounded-full flex relative">
+<label class="flex-1 relative z-10 cursor-pointer">
+<input checked="" class="sr-only peer" name="lease_type" type="radio" value="jeonse"/>
+<div class="w-full py-2 text-center text-sm font-medium rounded-full text-text-secondary peer-checked:bg-white dark:peer-checked:bg-gray-700 peer-checked:text-text-main dark:peer-checked:text-white peer-checked:shadow-sm transition-all duration-200">
+                                Jeonse (Deposit)
+                            </div>
+</label>
+<label class="flex-1 relative z-10 cursor-pointer">
+<input class="sr-only peer" name="lease_type" type="radio" value="monthly"/>
+<div class="w-full py-2 text-center text-sm font-medium rounded-full text-text-secondary peer-checked:bg-white dark:peer-checked:bg-gray-700 peer-checked:text-text-main dark:peer-checked:text-white peer-checked:shadow-sm transition-all duration-200">
+                                Monthly Rent
+                            </div>
+</label>
+</div>
+<!-- Input Groups -->
+<div class="space-y-4">
+<h3 class="text-sm font-bold text-text-secondary uppercase tracking-wider mb-2">Property Conditions</h3>
+<!-- Accordion Item 1 -->
+<details class="group bg-white dark:bg-gray-800 border border-border-color rounded-xl overflow-hidden" open="">
+<summary class="flex cursor-pointer items-center justify-between p-4 bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+<span class="font-bold text-text-main dark:text-white text-sm">Maintenance &amp; Repairs</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-4 space-y-3 bg-white dark:bg-gray-800">
+<label class="flex items-start gap-3 p-3 rounded-lg border border-transparent hover:border-border-color hover:bg-background-light dark:hover:bg-gray-700/50 transition-all cursor-pointer">
+<input checked="" class="mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<p class="text-sm font-medium text-text-main dark:text-white">Leakage Liability (6 months)</p>
+<p class="text-xs text-text-secondary mt-0.5">Landlord responsible for structural leakage.</p>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg border border-transparent hover:border-border-color hover:bg-background-light dark:hover:bg-gray-700/50 transition-all cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<p class="text-sm font-medium text-text-main dark:text-white">Mold Inspection</p>
+<p class="text-xs text-text-secondary mt-0.5">Joint inspection required before move-in.</p>
+</div>
+</label>
+</div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group bg-white dark:bg-gray-800 border border-border-color rounded-xl overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between p-4 bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">pets</span>
+<span class="font-bold text-text-main dark:text-white text-sm">Pets &amp; Lifestyle</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-4 space-y-3 bg-white dark:bg-gray-800">
+<div class="flex items-center justify-between p-2">
+<span class="text-sm font-medium text-text-main dark:text-white">Allow Pets?</span>
+<div class="flex gap-2">
+<label class="inline-flex items-center">
+<input class="form-radio text-primary" name="pets" type="radio" value="yes"/>
+<span class="ml-2 text-sm text-text-secondary">Yes</span>
+</label>
+<label class="inline-flex items-center">
+<input checked="" class="form-radio text-primary" name="pets" type="radio" value="no"/>
+<span class="ml-2 text-sm text-text-secondary">No</span>
+</label>
+</div>
+</div>
+<label class="flex items-start gap-3 p-3 rounded-lg border border-transparent hover:border-border-color hover:bg-background-light dark:hover:bg-gray-700/50 transition-all cursor-pointer">
+<input checked="" class="mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<p class="text-sm font-medium text-text-main dark:text-white">Pet Damage Clause</p>
+<p class="text-xs text-text-secondary mt-0.5">Tenant restores all scratches and odors.</p>
+</div>
+</label>
+</div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group bg-white dark:bg-gray-800 border border-border-color rounded-xl overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between p-4 bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">payments</span>
+<span class="font-bold text-text-main dark:text-white text-sm">Fees &amp; Payments</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-4 space-y-3 bg-white dark:bg-gray-800">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-medium text-text-secondary mb-1">Payment Date</label>
+<select class="w-full rounded-lg border-border-color text-sm focus:ring-primary focus:border-primary">
+<option>End of Month</option>
+<option>1st of Month</option>
+<option>15th of Month</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-medium text-text-secondary mb-1">Late Fee %</label>
+<select class="w-full rounded-lg border-border-color text-sm focus:ring-primary focus:border-primary">
+<option>5%</option>
+<option>10%</option>
+<option>15%</option>
+</select>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="pt-4">
+<button class="w-full flex items-center justify-center gap-2 py-3 rounded-full border border-border-color text-text-secondary hover:text-primary hover:border-primary hover:bg-primary/5 transition-all text-sm font-bold">
+<span class="material-symbols-outlined">refresh</span>
+<span>Regenerate Suggestions</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Preview -->
+<div class="flex-1 bg-background-light dark:bg-gray-900 p-8 flex flex-col items-center justify-center overflow-hidden">
+<div class="w-full max-w-3xl h-full flex flex-col">
+<!-- Paper Document -->
+<div class="flex-1 bg-white dark:bg-[#1f2937] rounded-t-xl shadow-xl border border-border-color overflow-hidden flex flex-col relative">
+<!-- Doc Header -->
+<div class="h-14 border-b border-border-color px-6 flex items-center justify-between bg-gray-50 dark:bg-gray-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">history_edu</span>
+<span class="text-sm font-bold text-text-main dark:text-white uppercase tracking-wider">Special Terms Preview</span>
+</div>
+<span class="text-xs font-mono text-text-secondary bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">Last updated: Just now</span>
+</div>
+<!-- Doc Content -->
+<div class="flex-1 p-8 md:p-12 overflow-y-auto font-serif text-text-main dark:text-gray-200 leading-relaxed text-base">
+<h2 class="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white font-display">Special Agreement Terms</h2>
+<div class="space-y-6">
+<div>
+<h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Article 1 [Deposit &amp; Rent]</h4>
+<p class="text-justify text-gray-600 dark:text-gray-300">
+                                        The lessee shall pay the deposit of <span class="bg-blue-100 dark:bg-blue-900/30 px-1 rounded text-primary font-medium">₩500,000,000</span> (KRW) upon signing this contract. The remainder shall be paid upon moving in.
+                                    </p>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Article 2 [Maintenance Obligations]</h4>
+<ol class="list-decimal pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+<li class="pl-2 marker:font-bold">The lessor guarantees the facility against structural water leakage for a period of <strong class="text-gray-900 dark:text-white">6 months</strong> from the move-in date.</li>
+<li class="pl-2 marker:font-bold">The lessee is responsible for minor repairs (e.g., light bulb replacement, battery changes for door locks) costing under ₩50,000.</li>
+<li class="pl-2 marker:font-bold bg-yellow-50 dark:bg-yellow-900/20 p-1 -ml-1 rounded border-l-4 border-yellow-400">If mold occurs due to the lessee's negligence (lack of ventilation), restoration costs shall be borne by the lessee.</li>
+</ol>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Article 3 [Prohibitions]</h4>
+<p class="text-justify text-gray-600 dark:text-gray-300">
+                                        Raising pets is strictly prohibited without prior written consent. If violated, the lessee must pay for professional cleaning and deodorizing services upon vacating.
+                                    </p>
+</div>
+<div class="opacity-50 blur-[1px] select-none">
+<h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Article 4 [Termination]</h4>
+<p class="text-justify text-gray-600 dark:text-gray-300">
+                                        This contract may be terminated if rent is overdue by more than 2 months...
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Actions -->
+<div class="p-4 bg-white dark:bg-[#1f2937] border-t border-border-color flex justify-between items-center z-10">
+<div class="flex gap-2">
+<button class="p-2 text-text-secondary hover:text-primary hover:bg-background-light rounded-full transition-colors" title="Print">
+<span class="material-symbols-outlined text-xl">print</span>
+</button>
+<button class="p-2 text-text-secondary hover:text-primary hover:bg-background-light rounded-full transition-colors" title="Share">
+<span class="material-symbols-outlined text-xl">share</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary text-primary hover:bg-primary/5 font-bold text-sm transition-all">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+<span>Copy Text</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white hover:bg-blue-600 shadow-lg shadow-blue-500/30 font-bold text-sm transition-all">
+<span class="material-symbols-outlined text-lg">save</span>
+<span>Save Template</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

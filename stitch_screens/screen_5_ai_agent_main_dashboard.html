@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Agent Main Dashboard - LegalAI Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#e2c135", "background-light": "#f8f8f6", "background-dark": "#211e11"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary rounded-lg size-10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-none">LegalAI Pro</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Real Estate Assistant</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+<p class="text-sm font-semibold">Dashboard</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">chat_bubble</span>
+<p class="text-sm font-medium">Legal Chatbot</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">shield_with_heart</span>
+<p class="text-sm font-medium">Risk Check</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">description</span>
+<p class="text-sm font-medium">Contract Help</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">newspaper</span>
+<p class="text-sm font-medium">Market News</p>
+</div>
+</nav>
+</div>
+<div class="flex flex-col gap-4 border-t border-slate-200 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-3 px-2">
+<div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdILWqsFj-9DpVpzd18vYMEwABPTcGB40yg0WYiJr8RKOWZsL_GB5GM0sszb8WEN07pZOLZaxyCN0zTu6JOMu6MxevU30QaOjjR9sjAhI5MXTjpvDTgS2zvPAil2zb7FZUNI29jIelnpSfTUum1j1_mWQoypgZ8kq0t_klEw4-ExjcGhmqJy37BYkuQEPb_a0QkyDbzY6D9NDPSU3HkLQUReJ-7f0kev7Pdr9zMt4MwvrU7jG8R19q8vrbcJHccdyL-wyR7Ia6CMDt"/>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Alex Thompson</p>
+<p class="text-xs text-slate-500">Premium Plan</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-8">
+<div class="max-w-6xl mx-auto flex flex-col gap-8">
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">Welcome back, Alex</h2>
+<p class="text-slate-500 dark:text-slate-400">Your property analysis is <span class="text-primary font-bold">85% complete</span> for the current quarter.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-bold shadow-sm hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+                            Oct 24, 2023
+                        </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:bg-primary/90 transition-all">
+                            View Full Report
+                        </button>
+</div>
+</header>
+<!-- Action Cards Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="relative group h-48 rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/50">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-blue-600"></div>
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative h-full p-5 flex flex-col justify-between text-white">
+<span class="material-symbols-outlined text-3xl opacity-80">smart_toy</span>
+<div class="flex flex-col">
+<h3 class="font-bold text-lg">Legal Chatbot</h3>
+<p class="text-xs text-white/80">AI legal consultation</p>
+</div>
+</div>
+</div>
+<div class="relative group h-48 rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-emerald-500/50">
+<div class="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700"></div>
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative h-full p-5 flex flex-col justify-between text-white">
+<span class="material-symbols-outlined text-3xl opacity-80">verified_user</span>
+<div class="flex flex-col">
+<h3 class="font-bold text-lg">Risk Check</h3>
+<p class="text-xs text-white/80">Compliance &amp; liability</p>
+</div>
+</div>
+</div>
+<div class="relative group h-48 rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-orange-500/50">
+<div class="absolute inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-red-700"></div>
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative h-full p-5 flex flex-col justify-between text-white">
+<span class="material-symbols-outlined text-3xl opacity-80">edit_document</span>
+<div class="flex flex-col">
+<h3 class="font-bold text-lg">Contract Help</h3>
+<p class="text-xs text-white/80">Drafting &amp; review</p>
+</div>
+</div>
+</div>
+<div class="relative group h-48 rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-indigo-500/50">
+<div class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-700"></div>
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative h-full p-5 flex flex-col justify-between text-white">
+<span class="material-symbols-outlined text-3xl opacity-80">public</span>
+<div class="flex flex-col">
+<h3 class="font-bold text-lg">Market News</h3>
+<p class="text-xs text-white/80">Real-time legislation</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Widgets Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Recent Activity -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col">
+<div class="p-5 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                                Recent Activity
+                            </h3>
+<button class="text-primary text-xs font-bold hover:underline">View All</button>
+</div>
+<div class="p-0 overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-5 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">File Name</th>
+<th class="px-5 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-5 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 text-sm font-medium text-slate-700 dark:text-slate-300">Oakwood Purchase Agreement</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+                                                Analyzed
+                                            </span>
+</td>
+<td class="px-5 py-4 text-sm text-slate-500">Oct 24, 2023</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 text-sm font-medium text-slate-700 dark:text-slate-300">Zoning Report - Sector 7</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
+                                                Pending
+                                            </span>
+</td>
+<td class="px-5 py-4 text-sm text-slate-500">Oct 23, 2023</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 text-sm font-medium text-slate-700 dark:text-slate-300">Lease Amendment v2</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+                                                Flagged
+                                            </span>
+</td>
+<td class="px-5 py-4 text-sm text-slate-500">Oct 22, 2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Side Widgets Column -->
+<div class="flex flex-col gap-6">
+<!-- Today's Legal Update -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-5 flex flex-col gap-4">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">campaign</span>
+                                Today's Legal Update
+                            </h3>
+<div class="bg-primary/5 rounded-lg p-3 border-l-4 border-primary">
+<p class="text-xs font-bold text-primary mb-1">New Regulation</p>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                                    SB-241: Updated zoning restrictions for commercial-to-residential conversions in urban centers...
+                                </p>
+</div>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                Read Full Analysis
+                            </button>
+</div>
+<!-- Market Trend -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-5 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+                                    Market Trend
+                                </h3>
+<span class="text-emerald-500 text-xs font-bold">+2.4%</span>
+</div>
+<!-- Mini Graph Mockup -->
+<div class="h-16 w-full flex items-end gap-1 mt-2">
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-3/4"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-2/3"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-1/2"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-4/5"></div>
+<div class="flex-1 bg-primary rounded-t h-full"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-3/5"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-2/3"></div>
+</div>
+<p class="text-[10px] text-slate-400 text-center uppercase tracking-widest mt-1">Property Index - Last 7 Days</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

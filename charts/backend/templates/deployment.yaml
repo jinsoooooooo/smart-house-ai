@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-house-ai-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smart-house-ai-backend
+  template:
+    metadata:
+      labels:
+        app: smart-house-ai-backend
+    spec:
+      containers:
+        - name: smart-house-ai-backend
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-config
+          ports:
+            - containerPort: {{ .Values.service.targetPort }}
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: {{ .Values.service.targetPort }}
+            initialDelaySeconds: 3
+            periodSeconds: 100

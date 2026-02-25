@@ -1,6 +1,19 @@
 import React from 'react';
 
 function HistoryHub() {
+    // 백엔드 API 작동 테스트용 히든 함수
+    const testBackendAPI = async () => {
+        try {
+            // config.js 또는 env 값에 따라 URL을 가져옴
+            const API_BASE_URL = window.ENV?.VITE_API_BASE_URL || import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
+            const response = await fetch(`${API_BASE_URL}/hello`);
+            const data = await response.json();
+            alert(`✅ 백엔드 연동 성공!\nAPI 주소: ${API_BASE_URL}\n서버 응답: ${JSON.stringify(data)}`);
+        } catch (error) {
+            alert(`❌ 백엔드 연결 실패!\n에러 메시지: ${error.message}\n설정된 API 주소: ${window.ENV?.VITE_API_BASE_URL || import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'}\n\n- 로컬 구동 시 백엔드 포트 확인\n- K8s 배포 시 Ingress/Service 설정 확인`);
+        }
+    };
+
     return (
         <div className="flex-1 flex flex-col h-full overflow-y-auto bg-slate-50 dark:bg-slate-900">
             <main className="max-w-7xl mx-auto w-full px-4 md:px-6 py-6 md:py-8">
@@ -226,7 +239,14 @@ function HistoryHub() {
             <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-6 px-4 md:px-6 mt-auto pb-24 md:pb-6">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-sm">© {new Date().getFullYear()} SmartHouse AI. 모든 법률 분석은 AI 보조 도구 역할을 하며, 최종 결정 전 전문가의 조언을 구하세요.</p>
-                    <div className="flex gap-6 text-sm font-medium text-slate-500">
+                    <div className="flex gap-6 text-sm font-medium text-slate-500 items-center">
+                        <button
+                            onClick={testBackendAPI}
+                            title="백엔드 API 상태 체크 (테스트용)"
+                            className="text-slate-200 hover:text-yellow-600 dark:text-slate-800 dark:hover:text-yellow-500 transition-colors"
+                        >
+                            <span className="material-symbols-outlined text-[16px]">api</span>
+                        </button>
                         <a className="hover:text-yellow-600 transition-colors cursor-pointer">개인정보처리방침</a>
                         <a className="hover:text-yellow-600 transition-colors cursor-pointer">이용약관</a>
                     </div>

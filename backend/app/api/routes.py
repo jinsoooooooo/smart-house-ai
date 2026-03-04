@@ -25,13 +25,15 @@ def agents(db: Session = Depends(get_db)):
     agents_data = crud_agent.get_agents(db=db)
     return agents_data
 
+
+
 @api_router.post("/chat/{agents}/completions",tags=["agents"])
-def chat_completions(agents: str):
+def chat_completions(agents: str, payload: dict):
     """
     선택된 agents와 채팅을 수행합니다.
     """
-    selected_agents = agents    
-    logger.info(f"chat completions: {selected_agents}")
+    selected_agents = agents
+    logger.info(f"chat completions: {selected_agents} | {str(payload)}") 
     if selected_agents == "legalchat":
         # TODO: legalChat 로직 구현
         pass

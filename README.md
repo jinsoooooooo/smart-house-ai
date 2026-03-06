@@ -16,6 +16,11 @@ smart-house-ai/
 ├── backend/                    # FastAPI 백엔드 서비스
 │   ├── app/
 │   │   ├── api/
+│   │   │   ├── endpoints/
+│   │   │   │   ├── chat.py     # 채팅 관련 API (지금 만드신 것)
+│   │   │   │   ├── users.py    # 회원가입, 내 정보 조회 API
+│   │   │   │   └── payment.py  # 결제, 구독 API
+|   │   │   └── api.py          # 위 파일들을 하나로 묶어주는 역할
 │   │   ├── core/
 │   │   ├── main.py
 │   │   └── ...
@@ -51,6 +56,42 @@ cd frontend
 npm install
 npm run dev
 ```
+
+### 디버깅
+```bash
+# 백엔드 디버깅
+cd backend
+source .venv/bin/activate  # 가상환경 활성화
+pip install -r requirements.txt
+python -m debugpy --listen [IP_ADDRESS]:5678 --wait-for-client app/main.py
+
+# 프론트엔드 디버깅
+cd frontend
+npm install
+npm run dev
+```
+
+```json
+# launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "python": "${workspaceFolder}/backend/.venv/bin/python3",
+            "program": "app/main.py",
+            // "console": "integratedTerminal",
+            "console": "internalConsole",
+            "jinja": true,
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}/backend"
+        }
+    ]
+}
+```
+
 
 ### 도커 빌드 및 실행
 ```bash

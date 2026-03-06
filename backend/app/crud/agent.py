@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from models.agents import Agent
+from app.models.agents import Agent
 
 def get_agents(db: Session, skip: int = 0, limit: int = 100):
     """

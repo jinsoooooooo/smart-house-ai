@@ -1,6 +1,6 @@
 import sys
 from loguru import logger
-from core.config import settings
+from app.core.config import settings
 
 logger = logger.bind(name="smart-house-ai")
 

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
 # core.database 파일이나 별도 모델 패키지에서 Base 클래스를 상속받아야 합니다.
 # 보통 core/database.py에 `Base = declarative_base()` 를 선언하여 가져옵니다.
-from core.database import Base 
+from app.core.database import Base 
 
 import uuid
 

@@ -1,16 +1,17 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from base.middleware import LoggingMiddleware
-from core.config import settings
-from core.exceptions import (
+from app.common.middleware import LoggingMiddleware
+from app.core.config import settings
+from app.core.exceptions import (
     BaseAPIException, 
     custom_exception_handler, 
     global_exception_handler
 )
 from fastapi.middleware.cors import CORSMiddleware
-from core.log import setup_logging,logger
-from core.database import engine, Base
-from api.routes import api_router
+from app.core.log import setup_logging,logger
+from app.core.database import engine, Base
+# from app.api.api import api_router
+from app.api.api import api_router
 
 
 @asynccontextmanager        
@@ -20,7 +21,7 @@ async def lifespan(app: FastAPI):
 
     # 2. DB 테이블 자동 생성 (앱 시작 시점)
     # create_all()을 실행하기 전에 사용할 모델들이 반드시 임포트되어 있어야 합니다.
-    from models.agents import Agent  
+    from app.models.agents import Agent  
 
     try:
         # 현재 생성하신 engine은 동기식(Sync) 엔진이므로 async with가 아닌 직접 실행해야 합니다.
@@ -63,7 +64,7 @@ app.exception_handler(BaseAPIException)(custom_exception_handler)
 app.exception_handler(Exception)(global_exception_handler)
 
 # 에러 핸들러 확인을 위한 router 추가 
-from core.exceptions import NotFoundException # [추가] 임포트 잊지마세요!
+from app.core.exceptions import NotFoundException # [추가] 임포트 잊지마세요!
 
 @app.get("/api/test-custom-error", tags=["handler_test"])
 def test_custom_error():
@@ -76,8 +77,11 @@ def test_fatal_error():
     return 10 / 0
 
 
-# 본격적인 서비스 라우터 추가 
-app.include_router(api_router, prefix="/api")
+# 기존 라우터 (하위 호환 유지)
+# app.include_router(api_router, prefix="/api")
+
+# v1 라우터 추가 (/api/v1/chat/{agent}/completion 형태로 노출)
+app.include_router(api_router, prefix="/api/v1")
 
 
 if __name__ == "__main__":

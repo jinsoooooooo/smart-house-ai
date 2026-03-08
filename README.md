@@ -34,7 +34,7 @@ smart-house-ai/
 │   ├── public/
 │   ├── Dockerfile              # 프론트엔드 도커 이미지 빌드
 │   └── package.json            # 프론트엔드 의존성
-└── charts/                     # Helm 차트
+└── helm/                       # Helm 차트
     ├── backend/
     └── frontend/
 ```
@@ -114,8 +114,8 @@ docker-compose up
 - `frontend-ci.yml`: 프론트엔드 코드 변경 시 자동 빌드 및 GHCR에 이미지 푸시
 
 ### ArgoCD
-- `charts/backend/`: 백엔드 배포용 Helm 차트
-- `charts/frontend/`: 프론트엔드 배포용 Helm 차트
+- `helm/backend/`: 백엔드 배포용 Helm 차트
+- `helm/frontend/`: 프론트엔드 배포용 Helm 차트
 - ArgoCD는 GHCR에 푸시된 이미지를 자동으로 감지하여 Kubernetes 클러스터에 배포합니다.
 
 ## API 엔드포인트

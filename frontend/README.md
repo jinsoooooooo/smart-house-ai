@@ -1,16 +1,48 @@
-# React + Vite
+# frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+`frontend`는 Next.js App Router 정석 구조로 구성된 프론트엔드 폴더입니다.
 
-Currently, two official plugins are available:
+## 목표
+- 기존 UI 디자인/문구/화면 흐름 유지
+- `src/app` 기반 라우팅 구조 사용
+- TypeScript + TSX 기준 유지보수 구조
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 구조
+```ascii
+frontend/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── chatbot/page.tsx
+│   │   ├── diagnosis/page.tsx
+│   │   ├── contract/page.tsx
+│   │   ├── news/page.tsx
+│   │   ├── history/page.tsx
+│   │   └── Dashboard/page.tsx    # 구 경로 호환용 리다이렉트
+│   ├── components/
+│   │   └── Sidebar.tsx
+│   ├── global.d.ts
+│   └── index.css
+├── public/
+│   └── config.js
+├── next.config.mjs
+├── tailwind.config.mjs
+└── tsconfig.json
+```
 
-## React Compiler
+## 실행
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 빌드
+```bash
+npm run build
+npm run start
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 참고
+- `npm run dev`, `npm run build` 실행 전에 `.next`를 자동 정리하도록 설정되어 있습니다.

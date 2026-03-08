@@ -1,9 +1,0 @@
-node_modules
-dist
-.next
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-.DS_Store
-.git

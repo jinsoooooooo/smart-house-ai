@@ -20,7 +20,7 @@ smart-house-ai/
 │   ├── public/
 │   ├── Dockerfile
 │   └── package.json            # 프론트엔드 독립 의존성
-└── charts/                     # 개별 Helm Chart 폴더
+└── helm/                       # 개별 Helm Chart 폴더
     ├── backend/                # 백엔드 전용 Helm Chart
     │   ├── Chart.yaml
     │   ├── values.yaml
@@ -75,7 +75,7 @@ CI는 github actions를 사용하고 있으며 build된 이미지는 GHCR에 pus
 
 CD는 ArgoCD를 사용하고 있으며 k8s 클러스터에 배포합니다.
 ArgoCD는 앞서 CI에서 정의된 GHCR의 이미지를 가져와서 k8s 클러스터에 배포합니다.
-배포에 사용되는 helmchart는 `charts/backend/`에 정의되어 있습니다.
+배포에 사용되는 helmchart는 `helm/backend/`에 정의되어 있습니다.
 
 
 ### 서비스 실행 

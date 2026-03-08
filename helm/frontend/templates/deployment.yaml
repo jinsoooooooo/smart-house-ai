@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: smart-house-ai-frontend-next
+  name: smart-house-ai-frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: smart-house-ai-frontend-next
+      app: smart-house-ai-frontend
   template:
     metadata:
       labels:
-        app: smart-house-ai-frontend-next
+        app: smart-house-ai-frontend
     spec:
       containers:
-        - name: smart-house-ai-frontend-next
+        - name: smart-house-ai-frontend
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
@@ -32,4 +32,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: frontend-next-config
+            name: frontend-config

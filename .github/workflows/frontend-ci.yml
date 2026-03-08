@@ -1,11 +1,12 @@
-name: frontend> ci and push GHCR
+name: frontend > ci and push GHCR
 
 on:
-  # push:
-    # branches: ["main"]
-    # paths:
-    #   - 'frontend/**'
-    #   - '.github/workflows/frontend-ci.yml'
+  push:
+    branches: ["main"]
+    paths:
+      - 'frontend/**'
+      - 'helm/frontend/**'
+      - '.github/workflows/frontend-ci.yml'
   workflow_dispatch:
 
 permissions:

@@ -134,7 +134,7 @@ smart-house-ai/
 │   ├── public/
 │   ├── Dockerfile
 │   └── package.json            # 프론트엔드 독립 의존성
-└── charts/                     # 개별 Helm Chart 폴더
+└── helm/                       # 개별 Helm Chart 폴더
     ├── backend/                # 백엔드 전용 Helm Chart
     │   ├── Chart.yaml
     │   ├── values.yaml

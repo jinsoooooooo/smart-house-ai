@@ -7,6 +7,9 @@
 본 프로젝트의 화면 구성에 대한 설명은 [PROJECT.md](PROJECT.md) 파일에 정의되어 있습니다.
 
 ## 프로젝트 구조
+- backend: fastAPI
+- frontend: React + Next.js -> App Router 표준(src/app/layout.tsx + 경로별 page.tsx)구조
+
 ```
 smart-house-ai/
 ├── .github/
@@ -57,7 +60,7 @@ npm install
 npm run dev
 ```
 
-### 디버깅
+### backend 디버깅
 ```bash
 # 백엔드 디버깅
 cd backend

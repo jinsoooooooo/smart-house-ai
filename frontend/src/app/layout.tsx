@@ -7,7 +7,7 @@ import '../index.css';
 
 export const metadata: Metadata = {
   title: 'Smart Home AI - Frontend',
-  description: 'Smart House AI frontend migrated from Vite to Next.js.',
+  description: 'Smart House AI frontend Service.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
